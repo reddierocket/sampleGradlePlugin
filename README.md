@@ -7,10 +7,11 @@ My objective was to build a standalone plugin that I could use
 in a gradle project.  Thanks to @M.Ricciuti for his answer that got me here with a minor tweak.
 
 To run this:
+```
     cd plugin
     gradle publish
     cd ../proj
     gradle testPlugin
-
+```
     you should see:
         Result: Stringtotest
