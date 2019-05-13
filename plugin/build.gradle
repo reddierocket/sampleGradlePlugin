@@ -1,0 +1,34 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'groovy'
+    id 'maven-publish'
+}
+group 'org.gradle.sample.plugin'
+version '0.1'
+
+//  pugin metadata configuration
+gradlePlugin {
+    plugins {
+        myplugin {
+            id = "org.gradle.sample.plugin.myplugin"
+            implementationClass = "org.gradle.sample.plugin.MyPlugin"
+        }
+    }
+}
+// publish to local maven repo for testing
+publishing {
+    repositories {
+        maven {
+            url "../repos/maven-repo"
+        }
+    }
+}
+//  repo for dependences resolution
+repositories{
+    jcenter()
+}
+
+// dependencies of this plugin 
+dependencies {
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+}

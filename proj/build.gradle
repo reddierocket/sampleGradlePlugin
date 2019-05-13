@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    // import/apply your custom plugin
+    id 'org.gradle.sample.plugin.myplugin' version '0.1'
+}
+
+//aeh changed group 'org.gradle.sample.plugin'
+group 'org.gradle.sample.myplugin'
+version '0.1'
+
+repositories{
+    maven {
+        url "../repos/maven-repo"
+     }
+    jcenter()
+}
